@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Simple Family Games Happy Game Box icon">
+  <rect x="92" y="244" width="338" height="230" rx="72" fill="#7145D6" stroke="#35134F" stroke-width="18"/>
+  <path fill="#9069EA" stroke="#35134F" stroke-linejoin="round" stroke-width="18" d="m58 224 164-84c31-16 49-15 82 1l171 83-51 73H109l-51-73Z"/>
+  <path fill="none" stroke="#FF3BA7" stroke-linecap="round" stroke-width="30" d="m96 77 80 86M176 77l-80 86"/>
+  <circle cx="267" cy="82" r="51" fill="none" stroke="#12BFF4" stroke-width="30"/>
+  <path fill="#8751F4" stroke="#35134F" stroke-linejoin="round" stroke-width="9" d="m400 37 23 51 55 6-41 37 11 54-48-27-48 27 11-54-41-37 55-6 23-51Z"/>
+  <path fill="none" stroke="#21D9C4" stroke-linecap="round" stroke-width="18" d="M475 40v45M452 63h46"/>
+  <circle cx="196" cy="361" r="11" fill="#FFD641"/>
+  <circle cx="329" cy="361" r="11" fill="#FFD641"/>
+  <path fill="none" stroke="#FFD641" stroke-linecap="round" stroke-width="22" d="M200 395c35 44 91 44 126 0"/>
+</svg>
