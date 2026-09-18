@@ -1,0 +1,17 @@
+{
+  "name": "Simple Family Games",
+  "short_name": "Family Games",
+  "description": "Easy games. Play together.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#031426",
+  "theme_color": "#031426",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
