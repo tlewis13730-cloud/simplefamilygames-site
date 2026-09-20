@@ -58,11 +58,52 @@
   const filterButtons = [...document.querySelectorAll("[data-filter]")];
   const gameCards = [...document.querySelectorAll("[data-categories]")];
   const filterStatus = document.querySelector("[data-filter-status]");
+  const gameSearch = document.querySelector("[data-game-search]");
+  const noResults = document.querySelector("[data-no-results]");
+  let activeFilter = "all";
+
+  const activeFilterLabel = () => {
+    const button = filterButtons.find(
+      (candidate) => candidate.dataset.filter === activeFilter,
+    );
+    return button?.textContent.replace(/\d+/g, "").trim() || "All";
+  };
+
+  const applyGameFilters = () => {
+    const query = (gameSearch?.value || "").trim().toLocaleLowerCase();
+    let visibleCount = 0;
+
+    gameCards.forEach((card) => {
+      const categories = (card.dataset.categories || "").split(" ");
+      const matchesCategory =
+        activeFilter === "all" || categories.includes(activeFilter);
+      const matchesQuery =
+        !query || card.textContent.toLocaleLowerCase().includes(query);
+      const visible = matchesCategory && matchesQuery;
+      card.hidden = !visible;
+      if (visible) visibleCount += 1;
+    });
+
+    if (noResults) noResults.hidden = visibleCount !== 0;
+
+    if (filterStatus) {
+      const noun = visibleCount === 1 ? "game" : "games";
+      const category = activeFilterLabel();
+      if (query) {
+        const categoryPrefix = activeFilter === "all" ? "" : `${category} `;
+        filterStatus.textContent = `Showing ${visibleCount} ${categoryPrefix}${noun} matching “${gameSearch.value.trim()}”`;
+      } else {
+        filterStatus.textContent =
+          activeFilter === "all"
+            ? `Showing all ${visibleCount} games`
+            : `Showing ${visibleCount} ${category} ${noun}`;
+      }
+    }
+  };
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", () => {
-      const filter = button.dataset.filter || "all";
-      let visibleCount = 0;
+      activeFilter = button.dataset.filter || "all";
 
       filterButtons.forEach((candidate) => {
         const active = candidate === button;
@@ -70,22 +111,11 @@
         candidate.setAttribute("aria-pressed", String(active));
       });
 
-      gameCards.forEach((card) => {
-        const categories = (card.dataset.categories || "").split(" ");
-        const visible = filter === "all" || categories.includes(filter);
-        card.hidden = !visible;
-        if (visible) visibleCount += 1;
-      });
-
-      if (filterStatus) {
-        const label = button.textContent.replace(/\d+/g, "").trim();
-        filterStatus.textContent =
-          filter === "all"
-            ? `Showing all ${visibleCount} games`
-            : `Showing ${visibleCount} ${label} game${visibleCount === 1 ? "" : "s"}`;
-      }
+      applyGameFilters();
     });
   });
+
+  gameSearch?.addEventListener("input", applyGameFilters);
 
   const menuButton = document.querySelector("[data-menu-button]");
   const siteNav = document.querySelector("[data-site-nav]");

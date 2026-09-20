@@ -6,9 +6,10 @@ Production domain: https://simplefamilygames.com
 
 ## Site contents
 
-- Responsive marketing homepage with all 17 games
+- Responsive marketing homepage with all 22 games
+- Current app artwork plus Favorites, Recent, and Surprise Me highlights
+- Searchable and filterable game collection
 - Neon Energy and Candy Pop theme switcher
-- Filterable game collection
 - Support and privacy pages
 - Custom 404 page and web manifest
 

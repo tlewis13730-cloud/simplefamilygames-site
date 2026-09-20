@@ -1,7 +1,7 @@
 {
   "name": "Simple Family Games",
   "short_name": "Family Games",
-  "description": "Easy games. Play together.",
+  "description": "Twenty-two easy family games for solo and shared play.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#031426",
