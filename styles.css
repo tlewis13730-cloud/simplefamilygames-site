@@ -2058,7 +2058,7 @@ body[data-theme="candy"] .legal-card a {
   }
 
   .hero-showcase {
-    min-height: 580px;
+    display: none;
   }
 
   .app-device {
@@ -2115,7 +2115,7 @@ body[data-theme="candy"] .legal-card a {
   }
 
   .hero-stats {
-    margin-top: 45px;
+    margin-top: 26px;
     border-width: 2px;
     border-radius: 22px 22px 0 0;
   }
