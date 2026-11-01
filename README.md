@@ -6,7 +6,7 @@ Production domain: https://simplefamilygames.com
 
 ## Site contents
 
-- Responsive marketing homepage with all 22 games
+- Responsive marketing homepage with all 25 games in the current Android test build
 - Current app artwork plus Favorites, Recent, and Surprise Me highlights
 - Searchable and filterable game collection
 - Neon Energy and Candy Pop theme switcher

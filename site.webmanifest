@@ -1,7 +1,7 @@
 {
   "name": "Simple Family Games",
   "short_name": "Family Games",
-  "description": "Twenty-two easy family games for solo and shared play.",
+  "description": "Twenty-five easy family games in Android testing for solo and shared play.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#031426",
