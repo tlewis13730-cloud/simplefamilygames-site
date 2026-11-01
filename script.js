@@ -115,6 +115,23 @@
     });
   });
 
+  document.querySelectorAll("[data-pick-filter]").forEach((pick) => {
+    pick.addEventListener("click", () => {
+      const filter = filterButtons.find(
+        (button) => button.dataset.filter === pick.dataset.pickFilter,
+      );
+      if (!filter) return;
+      if (gameSearch) gameSearch.value = "";
+      filter.click();
+      document.querySelector(".game-toolbar")?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "auto"
+          : "smooth",
+        block: "start",
+      });
+    });
+  });
+
   gameSearch?.addEventListener("input", applyGameFilters);
 
   const menuButton = document.querySelector("[data-menu-button]");
